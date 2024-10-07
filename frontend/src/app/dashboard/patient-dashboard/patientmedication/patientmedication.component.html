@@ -1,0 +1,14 @@
+<div class="medication-page">
+  <app-sidebar></app-sidebar>
+
+  <div class="medicine-list">
+    <h2>Current Medications</h2>
+    <ul class="medication-list">
+      <li *ngFor="let medicine of medicines" class="medication-item">
+        <strong>{{ medicine.medicineName }}</strong>
+        <span class="dosage">- {{ medicine.dosage }}</span>
+        <span class="timing">({{ medicine.timing }})</span>
+      </li>
+    </ul>
+  </div>
+</div>

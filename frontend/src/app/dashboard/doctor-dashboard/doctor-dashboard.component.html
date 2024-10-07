@@ -1,0 +1,142 @@
+<div class="doctor-dashboard-page">
+    <!-- Sidebar -->
+    <app-doctor-sidebar></app-doctor-sidebar>
+
+    <div class="main-content">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1>Welcome, {{ doctorName }}</h1>
+            <div class="profile-info">
+                <img src="assets/doctor-card/charlie.jpg" alt="Dr. Charlie" class="profile-img">
+                <div class="profile-details">
+                    <span class="doctor-name">{{ doctorName }}</span>
+                    <br>
+                    <span class="doctor-id">ID: {{ userId }}</span> <!-- Update here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointments and Medical Records Section -->
+        <div class="records-appointments-section">
+            <div class="appointments-section">
+                <h2>Appointments</h2>
+                <div class="appointment-toggle">
+                    <button class="toggle-button" [ngClass]="{ 'active': showUpcoming }" (click)="toggleAppointments(true)">
+                        Upcoming Appointments
+                    </button>
+                    <button class="toggle-button" [ngClass]="{ 'active': !showUpcoming }" (click)="toggleAppointments(false)">
+                        Past Appointments
+                    </button>
+                </div>
+                
+                <!-- Upcoming Appointments -->
+            <div *ngIf="showUpcoming">
+                <!-- <h3>Upcoming Appointments</h3> -->
+                <div class="appointment-row" *ngFor="let appointment of patient.appointments.upcoming; let i = index">
+                    <span class="appointment-date">{{ appointment.date.month }} {{ appointment.date.date }}</span>
+                    <span class="appointment-details">
+                        {{ appointment.symptom }} - {{ appointment.category }} with {{ appointment.doctor }}
+                    </span>
+                    <select class="appointment-status" [(ngModel)]="patient.appointments.upcoming[i].status">
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Waiting">Waiting</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Past Appointments -->
+            <div *ngIf="!showUpcoming">
+                <!-- <h3>Past Appointments</h3> -->
+                <div class="appointment-row" *ngFor="let appointment of patient.appointments.past; let i = index">
+                    <span class="appointment-date">{{ appointment.date.month }} {{ appointment.date.date }}</span>
+                    <span class="appointment-details">
+                        {{ appointment.symptom }} - {{ appointment.category }} with {{ appointment.doctor }}
+                    </span>
+                    <select class="appointment-status" [(ngModel)]="patient.appointments.past[i].status">
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Waiting">Waiting</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <!-- Health Record Section -->
+            <div class="health-record-section">
+                <!-- <h2>Health Records</h2> -->
+                <div class="records-section">
+                    <h3>Medical Records</h3>
+                    <div class="record-row" *ngFor="let record of medicalRecords">
+                        <div class="record-info">
+                            <span class="record-date"><strong>Date:</strong> {{ record.date }}</span>
+                            <span class="record-symptoms"><strong> Symptoms:</strong> {{ record.symptoms }}</span>
+                            <span class="record-doctor"><strong> Doctor:</strong> {{ record.doctor }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <!-- <div class="profile-section">
+            <div class="doctor-profile-card">
+                <div class="profile-header">
+                    <h2>Personal Record</h2>
+                    <i class="fa-solid fa-pen-to-square edit-icon"></i>
+                </div>
+                <div class="profile-details">
+                    <div class="doctor-info">
+                        <img src="assets/doctor-card/charlie.jpg" alt="Dr. Charlie" class="doctor-photo" />
+                        <div class="doctor-status">
+                            <h3>{{ doctorName }}</h3>
+                            <span class="star-rating">★ {{ starRating }}</span>
+                            <span class="online-status">
+                                <span class="status-dot"></span> {{ status }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="contact-icons">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <i class="fa-solid fa-phone"></i>
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                </div>
+                <hr />
+                <div class="profile-info">
+                    <h3>Info</h3>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <span class="label">Price<br></span>
+                            <span class="value">{{ info.price }}</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="label">Experience<br></span>
+                            <span class="value">{{ info.experience }}</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="label">Patients<br></span>
+                            <span class="value">{{ info.patientsTreated }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Calendar and Time Picker -->
+                    <!-- <div class="calendar-time-section">
+                        <mat-form-field class="calendar-picker" appearance="outline">
+                            <mat-label>Select Date</mat-label>
+                            <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field class="time-picker" appearance="outline">
+                            <mat-label>Select Time</mat-label>
+                            <input matInput type="time" [(ngModel)]="selectedTime">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>  -->
+    </div>
+</div>

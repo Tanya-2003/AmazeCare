@@ -1,0 +1,234 @@
+/* Container for sidebar and patient profile */
+.dashboard-container {
+  display: flex; /* Use Flexbox to align items side by side */
+  height: 100vh; /* Full height */
+}
+
+/* Sidebar styles */
+app-sidebar {
+  flex: 0 0 250px;
+  background-color: #675b9e;
+  color: white;
+  padding: 20px; /* Background color to match your sidebar */
+}
+
+/* Patient Profile styles */
+.patient-profile {
+  flex: 1; /* Take up the remaining space */
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Adjusted form control width to prevent overlapping */
+.form-control {
+  width: 95%; /* Set width to 95% to prevent overlap */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Container styles for form rows */
+.form-row {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between; /* Add spacing between elements */
+}
+
+/* Form Group within Form Row */
+.form-group.col-md-4,
+.form-group.col-md-6 {
+  flex: 1;
+}
+
+/* For narrow columns like blood group and known allergies */
+.form-group.col-md-4 .form-control {
+  width: 90%; /* Slightly reduce width for narrower columns */
+}
+
+/* Form actions container */
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.patient-info {
+  margin-top: 20px; /* Space above the patient info */
+  padding: 20px; /* Padding inside the patient info box */
+  background-color: #F8F4FB; /* Light pastel background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Styling for patient info text */
+.patient-info p {
+  font-size: 18px; /* Font size for details */
+  margin: 10px 0; /* Spacing between paragraphs */
+  line-height: 1.5; /* Line height for readability */
+}
+
+.btn-edit {
+  background-color: #d1c4e9; /* Pastel purple color */
+  color: black; /* Darker purple text color */
+  padding: 10px 20px; /* Padding for button */
+  border-radius: 4px; /* Rounded corners */
+  border: none; /* No border */
+  font-size: 16px; /* Font size */
+  margin-top: 10px; /* Space above the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+/* Hover effect for edit button */
+.btn-edit:hover {
+  background-color: #b39ddb; /* Darker shade on hover */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.dashboard-container {
+  display: flex;
+}
+
+.patient-profile {
+  margin-left: 20px;
+  flex-grow: 1;
+}
+
+.form-actions {
+  margin-top: 20px;
+}
+
+.float-end {
+  float: right;
+}
+
+.notification {
+  position: relative; /* Position relative for absolute positioning if needed */
+  margin-bottom: 20px; /* Space between notifications and other content */
+  padding: 15px; /* Padding inside the notification */
+  border-radius: 4px; /* Rounded corners */
+  transition: opacity 0.5s ease; /* Smooth transition effect */
+}
+
+.notification.alert-success {
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  border: 1px solid #c3e6cb; /* Light green border */
+}
+
+.notification.alert-danger {
+  background-color: #f8d7da; /* Light red background */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb; /* Light red border */
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Fade-in and fade-out transition */
+}
+
+.show {
+  opacity: 1; /* Show notification */
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column; /* Stack welcome and profile sections vertically */
+  width: 100%;
+}
+
+/* .welcome-section {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd; 
+} */
+
+/* .profile-info {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-left: 1rem;
+} */
+
+/* .profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 0px;
+} */
+
+.welcome-section {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between items */
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd; /* Optional: to separate the sections */
+}
+
+.profile-img {
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+   border-radius: 50%; /*Optional: to make it circular */
+  margin-left: 1rem; /* Space between text and image */
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-profile {
+  padding: 1rem;
+  background-color: #fff;
+  margin-top: 1rem; /* Space between the welcome and profile sections */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.patient-info {
+  margin-top: -1rem;
+}
+
+.form-actions {
+  margin-top: 1rem;
+}
+
+.patient-profile {
+  flex: 1; /* Take up the remaining space */
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow: hidden; /* Hide scrollbar */
+  max-height: calc(100vh - 200px); /* Adjust this value according to your layout */
+  margin-top: 10px;
+}

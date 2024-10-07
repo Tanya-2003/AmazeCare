@@ -1,0 +1,37 @@
+<header>
+  <div class="header-left">
+    <!-- Wrap the logo inside an anchor tag to make it clickable -->
+    <a href="#">
+      <img src="assets/images/white-bg-logo.png" alt="Amaze Care Logo" class="logo">
+    </a>
+    <span class="title">Amaze Care</span>
+    <nav>
+      <a href="/home" routerLinkActive="active">Home</a>
+      <a routerLink="/departments" routerLinkActive="active">Departments</a>
+      <a routerLink="/appointments" routerLinkActive="active">Appointments</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+  </div>
+  <!-- <div class="header-right">
+    <nav>
+      <button class="nav-button" (click)="navigateToLogin()">Login</button>
+      <button class="nav-button" (click)="navigateToSignup()">Signup</button>
+    </nav>
+  </div> -->
+
+  <!-- 03-10 -->
+  <div class="header-right">
+    <nav *ngIf="!isLoggedIn">
+      <button class="nav-button" (click)="navigateToLogin()">Login</button>
+      <button class="nav-button" (click)="navigateToSignup()">Signup</button>
+    </nav>
+    <div *ngIf="isLoggedIn" class="dropdown">
+      <button class="nav-button dropdown-button">Hello, {{ patientName }}</button>
+      <div class="dropdown-content">
+        <a (click)="navigateToDashboard()">Dashboard</a>
+        <a (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+
+</header>

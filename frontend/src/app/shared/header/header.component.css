@@ -1,0 +1,145 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.active {
+  font-weight: bold;
+  color: #7e01b4; /* Active color */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+}
+
+.title {
+  font-size: 24px;
+  margin-right: 30px;
+  color: #204EA5;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #204EA5;
+}
+
+/* .header-right a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #204EA5;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+} */
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  background-color: #204EA5; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for button */
+  margin-left: 15px; /* Space between buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.nav-button:hover {
+  background-color: lightskyblue; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight upward movement */
+}
+
+.header-right a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #204EA5;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+  color: #174A83; /* Change link color on hover */
+}
+
+/* 03-10 */
+/* Styling for the Hello, patientName button */
+.dropdown-button {
+  background-color: #204EA5; /* Button background color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside the button */
+  margin-left: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.dropdown-button:hover {
+  background-color: lightskyblue; /* Hover color */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative; /* To position the dropdown content absolutely */
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none; /* Hide dropdown by default */
+  position: absolute;
+  background-color: #ffffff; /* White background */
+  min-width: 160px; /* Minimum width of dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+  border-radius: 5px; /* Rounded corners */
+  z-index: 1; /* Ensure dropdown is on top */
+}
+
+/* Dropdown items */
+.dropdown-content a {
+  color: #204EA5; /* Text color */
+  padding: 12px 16px; /* Spacing inside the dropdown */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Full-width block links */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Dropdown item hover effect */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Light background on hover */
+  color: #174A83; /* Text color on hover */
+}
+
+/* Show the dropdown content when the user hovers over the dropdown container */
+.dropdown:hover .dropdown-content {
+  display: block; /* Display dropdown on hover */
+}
+
+/* Optional: Adjust the positioning of dropdown content if needed */
+.dropdown-content {
+  top: 40px; /* Position below the button */
+  right: 0; /* Align to the right */
+}
+

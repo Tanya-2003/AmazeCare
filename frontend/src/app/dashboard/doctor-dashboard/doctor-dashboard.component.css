@@ -1,0 +1,321 @@
+.doctor-dashboard-page {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+app-doctor-sidebar {
+    flex: 0 0 250px;
+    background-color: #675b9e;
+    color: white;
+    padding: 20px;
+}
+
+/* Main content with vertical stacking */
+.main-content {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    flex-grow: 1;
+    gap: 20px; /* Space between rows */
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 20px; /* Space inside the section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Flexbox for aligning items */
+    align-items: center; /* Center items vertically */
+}
+
+/* Welcome section title */
+.welcome-section h1 {
+    font-size: 24px; /* Font size for the welcome message */
+    margin: 0; /* Remove default margin */
+    color: #333; /* Dark color for text */
+}
+
+/* Profile info styling */
+.profile-info {
+    display: flex; /* Flexbox for aligning profile image and details */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Space between heading and profile info */
+}
+
+.profile-img {
+    width: 60px; /* Width of the profile image */
+    height: 60px; /* Height of the profile image */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Cover the area of the image */
+}
+
+.profile-details {
+    margin-left: 10px; /* Space between image and text */
+}
+
+.doctor-name {
+    font-size: 18px; /* Font size for the doctor's name */
+    font-weight: bold; /* Bold font for emphasis */
+    color: #555; /* Color for the name */
+}
+
+.doctor-id {
+    font-size: 14px; /* Font size for the doctor's ID */
+    color: #888; /* Gray color for less emphasis */
+
+}
+
+/* Records and Appointments Section */
+.records-appointments-section {
+    display: flex; /* Flexbox for side-by-side layout */
+    gap: 20px; /* Space between sections */
+}
+
+/* Appointments Section */
+.appointments-section {
+    flex: 1; /* Take equal space */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Health Records Section */
+.health-record-section {
+    flex: 1; /* Take equal space */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Appointment Toggle Button */
+.appointment-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px; /* Space below toggle buttons */
+}
+
+/* Styling for toggle buttons */
+.toggle-button {
+    padding: 10px 15px; /* Padding inside buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #675b9e; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Active state styling for toggle buttons */
+.toggle-button.active {
+    background-color: #563d7c; /* Darker shade when active */
+}
+
+/* Appointment Rows */
+.appointment-row {
+    display: flex; /* Flexbox for appointment details */
+    justify-content: space-between; /* Space out details */
+    align-items: center; /* Center items vertically */
+    padding: 10px 0; /* Vertical padding */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+}
+
+.appointment-date {
+    font-weight: bold; /* Bold font for date */
+    color: #555; /* Dark color for text */
+}
+
+.appointment-details {
+    flex-grow: 1; /* Take available space */
+    margin: 0 20px; /* Horizontal space around details */
+    color: #333; /* Color for details */
+}
+
+.appointment-status {
+    padding: 5px; /* Padding inside select */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border color */
+}
+
+/* Health Records */
+.records-section {
+    margin-top: 20px; /* Space above records */
+}
+
+.record-row {
+    padding: 10px 0; /* Vertical padding for records */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+}
+
+.record-info {
+    color: #333; /* Color for record information */
+}
+
+/* Profile Section */
+.profile-section {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 20px; /* Space inside the section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Doctor Profile Card */
+.doctor-profile-card {
+    background-color: white;
+    padding: 20px; /* Space inside card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex; /* Flexbox for header alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+/* Edit Icon */
+.edit-icon {
+    cursor: pointer; /* Pointer on hover */
+    color: #675b9e; /* Color for edit icon */
+}
+
+/* Info Cards */
+.info-cards {
+    display: flex; /* Flexbox for info cards */
+    gap: 20px; /* Space between cards */
+}
+
+.info-card {
+    background-color: #f1f1f1; /* Light gray background */
+    padding: 15px; /* Space inside card */
+    border-radius: 8px; /* Rounded corners */
+    flex: 1; /* Take equal space */
+    text-align: center; /* Center text */
+}
+
+/* Calendar and Time Picker Section */
+.calendar-time-section {
+    display: flex; /* Flexbox for alignment */
+    gap: 20px; /* Space between calendar and time picker */
+    margin-top: 20px; /* Space above */
+}
+
+/* Calendar and Time Picker styles */
+.mat-form-field {
+    flex: 1; /* Take equal space */
+}
+
+/* Profile Section Styles */
+.profile-section {
+    background-color: white; /* White background for the profile section */
+    padding: 20px; /* Space inside the section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Header Styles */
+.profile-header {
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between title and edit icon */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below header */
+}
+
+/* Doctor Info Styles */
+.doctor-info {
+    display: flex; /* Flexbox for doctor info layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below doctor info */
+}
+
+.doctor-photo {
+    width: 70px; /* Size of doctor photo */
+    height: 70px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular profile image */
+    margin-right: 15px; /* Space between image and text */
+}
+
+/* Doctor Status Styles */
+.doctor-status {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.star-rating {
+    color: gold; /* Star color */
+}
+
+/* Online Status Styles */
+.online-status {
+    display: flex; /* Flexbox for status layout */
+    align-items: center; /* Center items vertically */
+}
+
+.status-dot {
+    width: 10px; /* Dot size */
+    height: 10px; /* Dot size */
+    border-radius: 50%; /* Circular dot */
+    background-color: green; /* Color for online status */
+    margin-right: 5px; /* Space between dot and text */
+}
+
+/* Contact Icons Styles */
+.contact-icons {
+    display: flex; /* Flexbox for alignment */
+    gap: 15px; /* Space between icons */
+    margin-top: 10px; /* Space above icons */
+    font-size: 24px; /* Icon size */
+}
+
+/* Profile Info Section Styles */
+.profile-info {
+    margin-top: 20px; /* Space above info section */
+    margin-left:650px;
+}
+
+/* Info Cards Styles */
+.info-cards {
+    display: flex; /* Flexbox for card layout */
+    gap: 20px; /* Space between cards */
+    margin-bottom: 20px; /* Space below cards */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.info-card {
+    background-color: #f0f0f0; /* Background for info cards */
+    padding: 15px; /* Space inside cards */
+    border-radius: 8px; /* Rounded corners */
+    flex: 1; /* Allow cards to take equal space */
+    min-width: 150px; /* Minimum width for cards */
+    text-align: center; /* Center text */
+}
+
+/* Calendar and Time Picker Styles */
+.calendar-time-section {
+    display: flex; /* Flexbox for layout */
+    gap: 20px; /* Space between calendar and time picker */
+    margin-top: 20px; /* Space above the section */
+}
+
+/* Mat Form Field Styles */
+mat-form-field {
+    flex: 1; /* Make form fields take equal space */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .calendar-time-section {
+        flex-direction: column; /* Stack calendar and time picker on smaller screens */
+    }
+
+    .info-cards {
+        flex-direction: column; /* Stack info cards on smaller screens */
+    }
+
+    .info-card {
+        min-width: auto; /* Remove minimum width for responsiveness */
+    }
+}

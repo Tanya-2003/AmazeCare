@@ -1,0 +1,96 @@
+<div class="billing-page">
+    <!-- Sidebar -->
+    <app-admin-sidebar></app-admin-sidebar>
+  
+    <!-- Main Billing Content -->
+    <div class="billing-container">
+      <h2>Billing</h2>
+  
+      <!-- Search bar and Sort by dropdown -->
+      <div class="search-sort-container">
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          (input)="searchBillingData()"
+          placeholder="Search by Name "
+        />
+        
+        <div class="sort-by">
+          <label for="sortOptions">Sort by: </label>
+          <select id="sortOptions" [(ngModel)]="sortOption" (change)="sortBillingData()">
+            <option value="name">Name</option>
+            <option value="bill.billNumber">Bill ID</option>
+          </select>
+          <button (click)="toggleSortOrder()">
+            {{ isAscending ? 'Ascending' : 'Descending' }}
+          </button>
+        </div>
+      </div>
+  
+      <!-- Table with filtered and sorted data -->
+      <!-- <div *ngIf="!isPdfPreviewVisible"> -->
+      <div class="billing-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Appointment ID</th>
+              <!-- <th>Bill No</th> -->
+              <th>Select</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr *ngFor="let bill of getPaginatedData()"> -->
+              <tr *ngFor="let bill of getPaginatedData(); let i = index">
+                <!-- <td>{{ bill.name }} (Index: {{ i }})</td>
+                <td>{{ bill.age }}</td>
+                <td>{{ bill.gender }}</td>
+                <td>{{ bill.appointmentId }}</td>
+                <td>{{ bill.bill.billNumber }}</td> -->
+                <td>{{ bill?.name || 'No Name' }} </td>
+                <td>{{ bill?.age || 'N/A' }}</td>
+                <td>{{ bill?.gender || 'N/A' }}</td>
+                <td>{{ bill?.appointmentId || 'N/A' }}</td>
+                <!-- <td>{{ bill?.bill?.billNumber || 'N/A' }}</td> -->
+                <td><input type="radio" name="selectedBill" (click)="selectBill(bill)" /></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PDF Buttons and Pagination -->
+      <div class="pagination-buttons-container">
+        <button (click)="downloadPDF()">Download PDF</button>
+
+        <div class="pagination-controls">
+          <button (click)="previousPage()" [disabled]="currentPage === 1">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <span>Page {{ currentPage }} of {{ totalPages }}</span>
+          <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <button (click)="generatePDFPreview()">Generate PDF Preview</button>
+        <!-- <iframe id="pdfPreview" style="width: 100%; height: 500px; display: block;"></iframe> -->
+
+      </div>
+    <!-- </div> -->
+  
+      <!-- PDF Preview -->
+      <!-- <div class="pdf-preview">
+        <iframe id="pdfPreview" width="100%" height="200px"></iframe>
+      </div> -->
+      <!-- <div *ngIf="isPdfPreviewVisible" class="pdf-preview">
+        <iframe *ngIf="pdfSrc" [src]="pdfSrc | safeUrl" width="100%" height="400px" frameborder="0"></iframe>
+        <div class="pdf-controls">
+          <button (click)="downloadPDF()">Download PDF</button>
+          <button (click)="closePdfPreview()">Close</button>
+        </div>
+      </div> -->
+
+    </div>
+  </div>

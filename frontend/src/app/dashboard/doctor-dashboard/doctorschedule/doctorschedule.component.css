@@ -1,0 +1,178 @@
+/* Container for the sidebar and appointment section */
+.schedule-page {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f2f5; /* Subtle background color */
+}
+
+/* Sidebar styles */
+app-doctor-sidebar {
+    flex: 0 0 250px;
+    background-color: #675b9e;
+    color: white;
+    padding: 20px;
+}
+
+/* Appointment section styles */
+.appointments-section {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-height: calc(100vh - 60px); /* Ensure section doesn't overflow screen */
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Headings in appointment section */
+.appointments-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.appointments-section h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+/* Toggle buttons for upcoming and past appointments */
+.appointment-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #675b9e;
+    background-color: white;
+    color: #675b9e;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background-color: #8377d1;
+    color: white;
+}
+
+.toggle-button.active {
+    background-color: #675b9e;
+    color: white;
+}
+
+/* Appointment rows styling */
+.appointment-row {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appointment-date {
+    font-weight: bold;
+    margin-right: 10px;
+    white-space: nowrap; /* Prevent date from wrapping */
+}
+
+.appointment-details {
+    flex-grow: 1;
+    color: #555;
+    padding-left: 10px;
+}
+
+/* Appointment status dropdown */
+select.appointment-status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    min-width: 120px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Status colors for dropdown options */
+select.appointment-status.confirmed {
+    background-color: #28a745; /* Green for Confirmed */
+    color: white;
+}
+
+select.appointment-status.waiting {
+    background-color: #ffc107; /* Yellow for Waiting */
+    color: white;
+}
+
+select.appointment-status.rejected {
+    background-color: #dc3545; /* Red for Rejected */
+    color: white;
+}
+
+/* Focus styling */
+select.appointment-status:focus {
+    outline: none;
+    border-color: #675b9e;
+}
+
+/* Disabled dropdown styling */
+select.appointment-status[disabled] {
+    opacity: 0.6;
+    pointer-events: none; /* Prevent any interactions */
+    cursor: not-allowed;
+}
+
+/* Status box styling for past appointments */
+.appointment-status-box {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* Status box colors */
+.appointment-status-box.confirmed {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.appointment-status-box.waiting {
+    background-color: #FFC107; /* Yellow */
+    color: black;
+}
+
+.appointment-status-box.rejected {
+    background-color: #F44336; /* Red */
+    color: white;
+}
+
+.success-notification {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.error-notification {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+

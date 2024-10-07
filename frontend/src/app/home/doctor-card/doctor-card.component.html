@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="title">Find AmazeCare’s Amazing Doctors</h1>
+
+  <div class="filters">
+    <div class="filter">
+      <label for="speciality">Select your Speciality</label>
+      <select [(ngModel)]="selectedSpeciality" (change)="filterDoctors()" class="select-box">
+        <option value="">All Specialities</option>
+        <option *ngFor="let spec of specialities">{{ spec }}</option>
+      </select>
+    </div>
+
+    <div class="filter">
+      <label for="sort">Sort</label>
+      <select [(ngModel)]="sortOrder" (change)="sortDoctors()" class="select-box">
+        <option value="asc">Ascending Order</option>
+        <option value="desc">Descending Order</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <!-- <div *ngFor="let doctor of filteredDoctors" class="doctor-card" (click)="goToDoctorDetails(doctor.name)"> -->
+      <!-- 04-10 -->
+      <div *ngFor="let doctor of filteredDoctors" class="doctor-card" (click)="goToDoctorDetails(doctor?.doctorId)">
+      <div class="card-content">
+        <img class="doctor-image" [src]="doctor.image" alt="{{ doctor.name }}">
+        <div class="doctor-info">
+          <img class="department-avatar" [src]="doctor.departmentAvatar" alt="Department Avatar">
+          <h3 class="doctor-name">{{ doctor.name }}</h3>
+          <p class="doctor-speciality">{{ doctor.specialitisation }}</p>
+          <p class="doctor-bio">
+            We are committed to your health and well-being, offering the very latest in comprehensive evidence-based care.
+          </p>
+          <div class="social-icons">
+            <a href="#"><mat-icon>facebook</mat-icon></a>
+            <a href="#"><mat-icon>mail</mat-icon></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading-indicator" *ngIf="loading">
+    Loading more doctors...
+  </div>
+  <div class="end-loading" *ngIf="endMessage">{{ endMessage }}</div>
+</div>

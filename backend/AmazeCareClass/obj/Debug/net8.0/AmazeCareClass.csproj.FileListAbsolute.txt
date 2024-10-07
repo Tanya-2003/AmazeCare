@@ -1,0 +1,14 @@
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\bin\Debug\net8.0\AmazeCareClass.deps.json
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\bin\Debug\net8.0\AmazeCareClass.runtimeconfig.json
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\bin\Debug\net8.0\AmazeCareClass.dll
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\bin\Debug\net8.0\AmazeCareClass.pdb
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.AssemblyInfo.cs
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.dll
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\refint\AmazeCareClass.dll
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.pdb
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\AmazeCareClass.genruntimeconfig.cache
+C:\Users\admin\Desktop\Hexaware\Project\AmazeCareClass\obj\Debug\net8.0\ref\AmazeCareClass.dll

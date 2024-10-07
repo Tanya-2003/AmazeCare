@@ -1,0 +1,312 @@
+/* Flex container to hold sidebar and main content */
+.dashboard-layout {
+    display: flex;
+    height: 100vh; /* Full height for sidebar and main content */
+}
+
+/* Sidebar styling */
+app-sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #675b9e; /* Sidebar color */
+    color: white; /* Text color */
+    flex-shrink: 0; /* Prevent shrinking */
+    padding: 20px; /* Padding for sidebar content */
+}
+
+/* Main content layout */
+.main-content {
+    flex-grow: 1; /* Allow main content to take the remaining space */
+    padding: 20px 40px; /* Adjusted padding for more space */
+    background-color: #f8f9fa; /* Light background */
+    overflow-y: auto; /* Enable scrolling for long content */
+    max-width: 1100px; /* Constrain the width */
+    margin: 0 auto; /* Center the content within the available space */
+}
+
+/* Welcome section styling */
+.welcome-section {
+    background-color: #e0e0e0; /* Light grey background */
+    padding: 20px; /* Padding for welcome section */
+    display: flex; /* Flex layout */
+    align-items: center; /* Center align items */
+    justify-content: space-between; /* Space between title and profile info */
+}
+
+.welcome-section h1 {
+    font-size: 36px; /* Large title font size */
+    font-weight: bold; /* Bold title */
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow title to grow */
+}
+
+.profile-info {
+    display: flex; /* Flex layout for profile info */
+    align-items: center; /* Center align profile image and text */
+}
+
+.profile-img {
+    width: 60px; /* Fixed width for profile image */
+    height: 60px; /* Fixed height for profile image */
+    border-radius: 50%; /* Circular profile image */
+    margin-right: 15px; /* Space between image and text */
+    object-fit: cover; /* Cover the area of the image */
+}
+
+.profile-details {
+    display: flex; /* Flex layout for profile details */
+    flex-direction: column; /* Stack name and ID vertically */
+}
+
+.patient-name {
+    font-size: 18px; /* Font size for patient name */
+    font-weight: normal; /* Normal weight for patient name */
+}
+
+.patient-id {
+    font-size: 14px; /* Font size for patient ID */
+    color: #555; /* Dark grey color for patient ID */
+}
+
+/* Side by Side Layout for Documents, Medical Records, and Medicines */
+.records-documents-wrapper {
+    display: flex; /* Flex layout for records and documents */
+    gap: 30px; /* Space between sections */
+    margin-top: 20px; /* Space above records and documents */
+}
+
+/* Documents, Medical Records, Medicines Sections */
+.documents-section, .medical-records, .medicines-section {
+    flex: 1; /* Allow sections to grow equally */
+    background-color: #fff; /* White background for sections */
+    padding: 20px; /* Padding for section content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Document List */
+.document-list, .records-list, .medicines-list {
+    display: flex; /* Flex layout for lists */
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Space between items */
+}
+
+/* Document Row */
+.document-row, .record-row, .medicine-row {
+    display: flex; /* Flex layout for each row */
+    justify-content: space-between; /* Space between info and actions */
+    align-items: center; /* Center align items */
+    padding: 10px 15px; /* Padding for row */
+    background-color: white; /* White background for rows */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for rows */
+}
+
+/* Document Info */
+.document-info, .medicine-info {
+    display: flex; /* Flex layout for info */
+    flex-direction: column; /* Stack details vertically */
+}
+
+/* Document Name */
+.document-name, .medicine-name {
+    font-weight: bold; /* Bold for names */
+}
+
+/* Document Date */
+.document-date, .medicine-dosage {
+    color: #666; /* Grey color for date/dosage */
+}
+
+/* Download icons */
+.document-download i, .record-download i {
+    color: #333; /* Dark grey for download icons */
+    font-size: 18px; /* Font size for icons */
+    cursor: pointer; /* Pointer cursor for interactivity */
+}
+
+/* Medical Records Section */
+.medical-records h2, .documents-section h2, .medicines-section h2 {
+    font-size: 24px; /* Font size for section headers */
+    margin-bottom: 20px; /* Space below headers */
+}
+
+.record-info {
+    display: flex; /* Flex layout for record info */
+    gap: 30px; /* Space between fields */
+}
+
+.record-date {
+    font-weight: bold; /* Bold for record date */
+}
+
+.record-symptoms, .record-doctor {
+    color: #666; /* Grey color for symptoms/doctor */
+}
+
+/* Flexbox for Personal Record and Appointments side by side */
+.personal-appointments-wrapper {
+    display: flex; /* Flex layout for personal record and appointments */
+    gap: 30px; /* Space between sections */
+    margin-top: 20px; /* Space above personal/appointments section */
+}
+
+/* Personal Record and Appointments Section */
+.personal-record, .appointments-section {
+    flex: 1; /* Allow sections to grow equally */
+    background-color: white; /* White background for sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
+    padding: 20px; /* Padding for section content */
+}
+
+/* Appointments Styling */
+/* Toggle buttons for upcoming and past appointments */
+.appointment-toggle {
+    display: flex; /* Flex layout for toggle buttons */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px; /* Space below toggle buttons */
+}
+
+.toggle-button {
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 16px; /* Font size for button text */
+    border: 2px solid #675b9e; /* Border for buttons */
+    background-color: white; /* White background */
+    color: #675b9e; /* Text color */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.toggle-button.active {
+    background-color: #675b9e; /* Active button background color */
+    color: white; /* Active button text color */
+}
+
+/* Appointment rows styling */
+.appointment-row {
+    padding: 10px 0; /* Padding for rows */
+    border-bottom: 1px solid #e0e0e0; /* Bottom border */
+    display: flex; /* Flex layout for rows */
+    justify-content: space-between; /* Space between details and status */
+    align-items: center; /* Center align items */
+}
+
+.appointment-date {
+    font-weight: bold; /* Bold for appointment date */
+    margin-right: 10px; /* Space to the right */
+}
+
+.appointment-details {
+    flex-grow: 1; /* Allow details to grow */
+    color: #555; /* Dark grey for details */
+}
+
+.appointment-status {
+    font-weight: bold; /* Bold for status */
+    padding: 5px 10px; /* Padding for status labels */
+    border-radius: 5px; /* Rounded corners for status labels */
+    text-align: center; /* Center align text */
+    min-width: 100px; /* Minimum width for status labels */
+}
+
+/* Status styles */
+.confirmed {
+    background-color: #28a745; /* Green for confirmed */
+    color: white; /* White text */
+}
+
+.waiting {
+    background-color: #ffc107; /* Yellow for waiting */
+    color: white; /* White text */
+}
+
+.rejected {
+    background-color: #dc3545; /* Red for rejected */
+    color: white; /* White text */
+}
+
+.appointments-section h3 {
+    margin-top: 20px; /* Space above section title */
+    font-size: 20px; /* Font size for section title */
+    border-bottom: 1px solid #ccc; /* Bottom border for title */
+    padding-bottom: 5px; /* Space below title */
+}
+
+/* Edit icon styling */
+.edit-icon {
+    font-size: 18px; /* Font size for edit icon */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    color: #333; /* Dark grey for icon */
+}
+
+/* Bold line below the header */
+.bold-line {
+    border: 2px solid #000; /* Black border */
+    margin-top: 10px; /* Space above line */
+    margin-bottom: 20px; /* Space below line */
+}
+
+/* Personal details styling */
+.personal-details {
+    display: flex; /* Flex layout for personal details */
+    flex-direction: column; /* Stack details vertically */
+    gap: 10px; /* Space between details */
+}
+
+.detail-row {
+    display: flex; /* Flex layout for detail rows */
+    justify-content: space-between; /* Space between labels and values */
+    padding: 10px 0; /* Padding for rows */
+    border-bottom: 1px solid #e0e0e0; /* Bottom border for rows */
+}
+
+.detail-row span {
+    font-size: 16px; /* Font size for detail values */
+    color: #333; /* Dark grey for values */
+}
+
+.detail-row strong {
+    font-weight: 600; /* Bold for labels */
+}
+
+/* Patient Dashboard Page */
+.patient-dashboard-page {
+    display: flex; /* Flex layout for page */
+}
+
+.dashboard-content {
+    flex: 1; /* Allow dashboard content to grow */
+    padding: 20px; /* Padding for dashboard content */
+
+    h1 {
+        text-align: center; /* Center align main title */
+        margin-bottom: 20px; /* Space below title */
+    }
+
+    .dashboard-sections {
+        display: flex; /* Flex layout for sections */
+        flex-direction: column; /* Stack sections vertically */
+        gap: 20px; /* Space between sections */
+    }
+}
+
+/* Charts Wrapper */
+.charts-wrapper {
+    display: flex; /* Flex layout for charts */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-between; /* Space between charts */
+    margin-top: 20px; /* Space above charts */
+
+    .chart-container {
+        flex: 1 1 45%; /* Flex-grow, shrink and basis for chart containers */
+        max-width: 48%; /* Maximum width for charts */
+        margin: 10px; /* Margin for charts */
+        height: 300px; /* Fixed height for charts */
+    }
+
+    canvas {
+        width: 100% !important; /* Ensure canvas uses full width */
+        height: 100% !important; /* Ensure canvas uses full height */
+    }
+}

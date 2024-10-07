@@ -1,0 +1,29 @@
+<!-- Show header and footer only if the user is not on the dashboard route -->
+<div *ngIf="!isDashboardRoute">
+  <!-- Header component - Always displayed -->
+  <app-header></app-header>
+
+  <!-- Content that varies by route -->
+  <div *ngIf="!isLoginPage && !isSignupPage">
+    <!-- Show the hero and doctor-card only if NOT on the doctor-details page -->
+    <div *ngIf="!isDoctorDetailsPage">
+      <app-hero></app-hero>
+      <div class="container">
+        <app-doctor-card (doctorSelected)="onDoctorSelected($event)"></app-doctor-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- Always show the router outlet for routing (e.g., login, signup, doctor-details) -->
+  <router-outlet></router-outlet>
+
+  <!-- Footer component - Always displayed -->
+  <app-footer></app-footer>
+</div>
+
+<!-- Show sidebar and dashboard content only on dashboard routes -->
+<div *ngIf="isDashboardRoute">
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

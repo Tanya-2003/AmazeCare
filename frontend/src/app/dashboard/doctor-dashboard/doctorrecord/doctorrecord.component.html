@@ -1,0 +1,233 @@
+<div class="health-record-page">
+  <app-doctor-sidebar></app-doctor-sidebar>
+
+  <div class="health-record-content">
+    <h2>Health Records</h2>
+
+    <!-- Success Notification -->
+    <div *ngIf="successMessage" class="success-notification">
+      {{ successMessage }}
+    </div>
+
+    <!-- Display Records -->
+    <div class="records-section" *ngIf="!selectedRecord">
+      <h3>Medical Records</h3>
+      <div class="record-row" *ngFor="let record of paginatedRecords">
+        <div class="record-info">
+          <span class="record-appointment-id"><strong>Appointment ID:</strong> {{ record.appointmentId }}</span>
+          <span class="record-date"><strong>Date:</strong> {{ record.nextAppointmentDate | date:'MMMM d, y' }}</span>
+          <span class="record-patient-name"><strong>Patient Name:</strong> {{ record.patientName }}</span>
+          <span class="record-diagnosis"><strong>Diagnosis:</strong> {{ record.diagnosis }}</span>
+          <span class="record-medicine"><strong>Medicine:</strong> {{ record.medicineName }}</span>
+          <span class="record-frequency"><strong>Frequency:</strong> {{ record.medicineFrequency }}</span>
+          <span class="record-time"><strong>Time:</strong> {{ record.medicineTime }}</span>
+          <span class="record-treatment-plan"><strong>Treatment Plan:</strong> {{ record.treatmentPlan }}</span>
+          <span class="record-next-appointment"><strong>Next Appointment:</strong> {{ record.nextAppointmentDate | date:'MMMM d, y' }}</span>
+          <span class="record-insurance"><strong>Insurance Coverage:</strong> {{ record.insuranceCoverage }}</span>
+          
+          <!-- Buttons for Editing Prescription and Diagnosis -->
+          <div class="form-buttons" style="margin-top: 10px;">
+            <button class="edit-button" (click)="onEditRecord(record)">Edit Prescription</button>
+            <button class="edit-button" (click)="onEditDiagnosis(record)">Edit Diagnosis</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="pagination-controls">
+        <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+      </div>
+    </div>
+
+    <!-- Edit Prescription Form -->
+    <div *ngIf="editingPrescription && selectedRecord" class="edit-form">
+    <h3>Edit Prescription</h3>
+    <form [formGroup]="prescriptionForm">
+        <div class="row">
+            <div class="medicineName">
+                <label for="medicineName">Medicine Name:</label>
+                <input type="text" id="medicineName" class ="medicinename" formControlName="medicineName" required class="form-control" />
+            </div>
+            <div class="medicineFrequency">
+                <label>Medicine Frequency:</label>
+                <br>
+                <div>
+                    <input type="checkbox" id="morning" formControlName="morning" />
+                    <label for="morning">Morning</label>
+                    <input type="checkbox" id="afternoon" formControlName="afternoon" />
+                    <label for="afternoon">Afternoon</label>
+                    <input type="checkbox" id="night" formControlName="night" />
+                    <label for="night">Night</label>
+                </div>
+            </div>
+            <div class="medicineTime">
+                <label>Medicine Time:</label>
+                <div>
+                    <input type="radio" id="beforeFood" formControlName="medicineTime" value="BF" />
+                    <label for="beforeFood">Before Food</label>
+                    <input type="radio" id="afterFood" formControlName="medicineTime" value="AF" />
+                    <label for="afterFood">After Food</label>
+                </div>
+            </div>
+        </div>
+        <div class="edit-form-buttons">
+            <button type="button" class="save-button" (click)="saveRecord()" [disabled]="prescriptionForm.invalid">Save</button>
+            <button type="button" class="cancel-button" (click)="cancelEdit()">Cancel</button>
+        </div>
+    </form>
+</div>
+
+    <!-- Edit Diagnosis Form -->
+    <!-- <div *ngIf="editingDiagnosis && selectedRecord" class="edit-form">
+      <h3>Edit Diagnosis and Treatment Plan</h3>
+      <form>
+        <label>
+          Diagnosis:
+          <input [(ngModel)]="selectedRecord.diagnosis" name="diagnosis" required />
+        </label>
+        <label>
+          Treatment Plan:
+          <input [(ngModel)]="selectedRecord.treatmentPlan" name="treatmentPlan" required />
+        </label>
+        <label>
+          Next Appointment Date:
+          <input 
+            type="text" 
+            [(ngModel)]="selectedRecord.nextAppointmentDate" 
+            placeholder="yyyy-MM-dd" 
+            name="nextAppointmentDate" 
+            required 
+          />
+        </label>
+        <label>
+          Medicine Name:
+          <input 
+            [(ngModel)]="selectedRecord.medicineName" 
+            name="medicineName" 
+            required 
+          />
+        </label>
+        <label>
+          Medicine Frequency:
+          <input 
+            [(ngModel)]="selectedRecord.medicineFrequency" 
+            name="medicineFrequency" 
+            required 
+          />
+        </label>
+        <label>
+          Medicine Time:
+          <input 
+            [(ngModel)]="selectedRecord.medicineTime" 
+            name="medicineTime" 
+            required 
+          />
+        </label>
+        <label>
+          Insurance Coverage:
+          <input 
+            [(ngModel)]="selectedRecord.insuranceCoverage" 
+            name="insuranceCoverage" 
+            required 
+          />
+        </label>
+        <div class="edit-form-buttons">
+          <button type="button" class="save-button" (click)="updateRecordDetails()">Save Changes</button>
+          <button type="button" class="cancel-button" (click)="cancelEdit()">Cancel</button>
+        </div>
+      </form>
+    </div>        -->
+    <!-- Edit Diagnosis Form -->
+    <div *ngIf="editingDiagnosis && selectedRecord" class="edit-diagnosis-form">
+      <h3>Edit Diagnosis and Treatment Plan</h3>
+      <form>
+          <div class="row">
+              <div class="diagnosis">
+                  <label for="diagnosis">Diagnosis:</label>
+                  <input 
+                      id="diagnosis" 
+                      [(ngModel)]="selectedRecord.diagnosis" 
+                      name="diagnosis" 
+                      required 
+                      class="form-control" 
+                  />
+              </div>
+              <div class="treatmentplan">
+                  <label for="treatmentPlan">Treatment Plan:</label>
+                  <input 
+                      id="treatmentPlan" 
+                      [(ngModel)]="selectedRecord.treatmentPlan" 
+                      name="treatmentPlan" 
+                      required 
+                      class="form-control" 
+                  />
+              </div>
+          </div>
+          <div class="row">
+              <div class="nextAppointmentDate">
+                <br>
+                  <label for="nextAppointmentDate">Next Appointment Date:</label>
+                  <input 
+                      id="nextAppointmentDate" 
+                      type="text" 
+                      [(ngModel)]="selectedRecord.nextAppointmentDate" 
+                      placeholder="yyyy-MM-dd" 
+                      name="nextAppointmentDate" 
+                      required 
+                      class="form-control" 
+                  />
+              </div>
+              <div class="insuranceCoverage"><br>
+                  <label for="insuranceCoverage">Insurance Coverage:</label>
+                  <input 
+                      id="insuranceCoverage" 
+                      [(ngModel)]="selectedRecord.insuranceCoverage" 
+                      name="insuranceCoverage" 
+                      required 
+                      class="form-control" 
+                  />
+              </div>
+          </div>
+          <div class="row">
+              <div class="medicineName"><br>
+                  <label for="medicineName">Medicine Name:</label>
+                  <input 
+                      id="medicineName" 
+                      [(ngModel)]="selectedRecord.medicineName" 
+                      name="medicineName" 
+                      required 
+                      class="form-control" 
+                  />
+              </div>
+              <div class="medicineFrequency"><br>
+                  <label for="medicineFrequency">Medicine Frequency:</label>
+                  <input 
+                      id="medicineFrequency" 
+                      [(ngModel)]="selectedRecord.medicineFrequency" 
+                      name="medicineFrequency" 
+                      required 
+                      class="form-control" 
+                  />
+              </div>
+              <div class="medicineTime"><br>
+                  <label for="medicineTime">Medicine Time:</label>
+                  <input 
+                      id="medicineTime" 
+                      [(ngModel)]="selectedRecord.medicineTime" 
+                      name="medicineTime" 
+                      required 
+                      class="form-control" 
+                  />
+              </div>
+          </div>
+          <div class="form-buttons">
+              <button type="button" class="save-button" (click)="updateRecordDetails()">Save Changes</button>
+              <button type="button" class="cancel-button" (click)="cancelEdit()">Cancel</button>
+          </div>
+      </form>
+    </div>
+
+  </div>
+</div>

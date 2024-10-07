@@ -1,0 +1,143 @@
+<div class="doctor-profile-page">
+  <!-- Sidebar -->
+  <app-doctor-sidebar></app-doctor-sidebar> 
+
+  <!-- Profile Display/Edit Section -->
+  <div class="profile-container">
+    <h1 class="text-center mb-4">Doctor Profile</h1>
+ 
+    <!-- Notification Messages -->
+    <div *ngIf="errorMessage" class="notification-container">
+      <div class="error-notification">
+        <i class="fa-solid fa-circle-exclamation"></i> {{ errorMessage }}
+      </div>
+    </div>
+
+    <div *ngIf="successMessage" class="notification-container">
+      <div class="success-notification">
+        <i class="fa-solid fa-circle-check"></i> {{ successMessage }}
+      </div>
+    </div>
+
+    <!-- Doctor Profile Display -->
+        <div *ngIf="!isEditing" class="card mb-4">
+          <div class="card-body">
+            <div class="text-right">
+              <img [src]="getDoctorImage()" alt="Dr. {{ info?.firstName }} {{ info?.lastName }}" class="doctor-image" />
+              <h3>{{ info?.firstName }} {{ info?.lastName }}</h3>
+            </div>
+            <!-- <div class="text-center">
+              <h3>{{ info?.firstName }} {{ info?.lastName }}</h3>
+            </div> -->
+            <br>
+        <hr>
+        <p><strong>Gender:</strong> {{ info?.gender }}</p>
+        <p><strong>Date of Birth:</strong> {{ info?.dateOfBirth | date:'longDate' }}</p>
+        <p><strong>Specialization:</strong> {{ info?.specialisation }}</p>
+        <p><strong>Years of Experience:</strong> {{ info?.yearsOfExperience }} years</p>
+        <p><strong>Phone Number:</strong> {{ info?.phoneNumber }}</p>
+        <p *ngIf="info?.secondaryPhoneNumber"><strong>Secondary Phone Number:</strong> {{ info?.secondaryPhoneNumber }}</p>
+        <p><strong>Email:</strong> {{ info?.email }}</p>
+        <p><strong>License Number:</strong> {{ info?.licenseNumber }}</p>
+        <p><strong>Status:</strong> {{ status }}</p>
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="editProfile()">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor Profile Edit Form -->
+    <div *ngIf="isEditing" class="card edit-form-container">
+      <div class="card-body">
+        <h2 class="text-center">Edit Profile</h2>
+        <form [formGroup]="doctorProfileForm" (ngSubmit)="saveProfile()">
+          <!-- Form Row: First Name and Last Name -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="firstName" class="form-label">First Name</label>
+              <input id="firstName" formControlName="firstName" name="firstName" class="form-control" required />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input id="lastName" formControlName="lastName" name="lastName" class="form-control" required />
+            </div>
+          </div>
+
+          <!-- Form Row: Date of Birth and Gender -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="dateOfBirth" class="form-label">Date of Birth</label>
+              <input id="dateOfBirth" formControlName="dateOfBirth" name="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" required />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="gender" class="form-label">Gender</label>
+              <input id="gender" formControlName="gender" name="gender" class="form-control" required />
+            </div>
+          </div>
+
+          <!-- Form Row: Phone Number and Secondary Phone Number -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="phoneNumber" class="form-label">Phone Number</label>
+              <input id="phoneNumber" formControlName="phoneNumber" name="phoneNumber" class="form-control" required />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="secondaryPhoneNumber" class="form-label">Secondary Phone Number</label>
+              <input id="secondaryPhoneNumber" formControlName="secondaryPhoneNumber" name="secondaryPhoneNumber" class="form-control" />
+            </div>
+          </div>
+
+          <!-- Form Row: Email -->
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" formControlName="email" name="email" class="form-control-email" required />
+            </div>
+          </div>
+
+          <!-- Form Row: Specialization, License Number, and Years of Experience -->
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="specialisation" class="form-label">Specialisation</label>
+              <input id="specialisation" formControlName="specialisation" name="specialisation" class="form-control" required />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="licenseNumber" class="form-label">License Number</label>
+              <input id="licenseNumber" formControlName="licenseNumber" name="licenseNumber" class="form-control" required />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="yearsOfExperience" class="form-label">Years of Experience</label>
+              <input id="yearsOfExperience" formControlName="yearsOfExperience" name="yearsOfExperience" class="form-control-yoe" required />
+            </div>
+          </div>
+
+          <!-- Form Row: Username and Password -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="username" class="form-label">Username</label>
+              <input id="username" formControlName="username" class="form-control" required [disabled]="true" />
+            </div>            
+            <div class="form-group col-md-6">
+              <label for="password" class="form-label">Password</label>
+              <input id="password" formControlName="password" name="password" class="form-control" required />
+            </div>
+          </div>
+
+          <!-- Form Actions: Save and Cancel Buttons -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-check"></i> Save
+            </button>
+            <button type="button" class="btn btn-danger" (click)="cancelEdit()">
+              <i class="fa-solid fa-xmark"></i> Cancel
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

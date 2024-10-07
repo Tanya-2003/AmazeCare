@@ -1,0 +1,111 @@
+footer {
+  background-color: white;
+  color: #204EA5;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.footer-logo-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex; /* Aligns items in a row */
+  gap: 15px; /* Adds space between the icons */
+}
+
+.social-icons a {
+  display: flex; /* Ensures icon and text stay in one line */
+  align-items: center;
+  text-decoration: none;
+  color: #204ea5;
+}
+
+.social-icons a i {
+  margin-right: 8px; /* Adds space between the icon and text */
+  font-size: 18px;
+}
+
+.social-icons a:hover i {
+  color: #007bff; /* Changes icon color on hover */
+}
+
+.amaze-care {
+  display: flex;
+  flex-direction: column; /* Stacks "Amaze" and "Care" vertically */
+  align-items: flex-start; /* Aligns text to the left */
+  margin-left: -220px; /* Adds space between the logo and "Amaze Care" */
+  margin-top: 10px;
+}
+
+.amaze-care h4 {
+  margin: 0; /* Removes default margin */
+  line-height: 1; /* Reduces space between "Amaze" and "Care" */
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: block;
+  color: #565656;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Adjust map size to fit within the footer */
+#map {
+  width: 100%; /* Full width of the available space */
+  max-width: 300px; /* Max width to limit size */
+  height: 200px; /* Adjust height to fit better */
+  margin-top: 10px;
+  background-color: grey; /* Placeholder for when map is loading */
+}
+
+#map iframe {
+  width: 100%; /* Ensures the iframe takes up full width of the container */
+  height: 100%; /* Ensures the iframe height adjusts with the container */
+}
+
+.footer-links > div {
+  max-width: 200px; /* Prevents links section from stretching too wide */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stacks elements on smaller screens */
+    align-items: center;
+  }
+
+  #map {
+    width: 100%; /* On small screens, map will take up the full width */
+  }
+}

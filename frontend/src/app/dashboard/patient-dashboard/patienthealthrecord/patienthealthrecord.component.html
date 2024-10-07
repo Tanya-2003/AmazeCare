@@ -1,0 +1,26 @@
+<div class="health-record-page">
+  <app-sidebar></app-sidebar>
+
+  <div class="health-record-content">
+    <h2>Health Records</h2>
+
+    <!-- Flex container for Records and Documents -->
+    <div class="records-documents-wrapper">
+      <!-- Medical Records Section -->
+      <div class="records-section">
+        <h3>Medical Records</h3>
+        <div class="record-row" *ngFor="let record of medicalRecords">
+          <div class="record-info">
+            <span class="record-doctor"><strong>Consulted with </strong>Dr: {{ record.doctorName }}</span> <!-- Added doctor name -->
+            <span class="record-date"><strong>Diagnosis:</strong> {{ record.diagnosis }}</span>
+            <span class="record-doctor"><strong>Medicine:</strong> {{ record.medicineName }}</span>
+            <span class="record-plan"><strong>Treatment Plan:</strong> {{ record.treatmentPlan }}</span>
+            <span class="record-coverage"><strong>Insurance Coverage:</strong> {{ record.insuranceCoverage }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- You can still keep the Medical Documents section if necessary -->
+    </div>
+  </div>
+</div>

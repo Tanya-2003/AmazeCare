@@ -1,0 +1,36 @@
+<div *ngIf="doctor && doctorDetails" class="doctor-details-container">
+  <div class="doctor-header">
+    <!-- <img [src]="doctor.image" alt="Doctor Image" class="doctor-image"> -->
+    <img [src]="doctorImage" alt="Doctor Image" class="doctor-image"> <!-- Updated here -->
+    <div class="doctor-info">
+      <!-- <h1>{{ doctor.name }}</h1> -->
+      <h1>{{ fullName }}</h1> <!-- Display full name -->
+      <p><strong>Specialty:</strong> {{ doctorDetails.specialisation }}</p>
+      <p><strong>Experience:</strong> {{ doctor.yearsOfExperience || 'N/A' }} Years</p>
+      <!-- <p><strong>Qualification:</strong> {{ doctor.qualification || 'N/A' }}</p> -->
+      <!-- <button class="btn-appointment" (click)="scrollToForm()">Book an Appointment</button> -->
+
+       <!-- 02-10 -->
+        <button class="btn-appointment" (click)="bookAppointment()">Book an Appointment</button>
+    </div>
+  </div>
+  <div class="doctor-bio">
+    <!-- <h3>About {{ doctor.name }}</h3> -->
+    <h3>About {{ fullName }}</h3> <!-- Display full name -->
+    <!-- <p>{{ doctor.about || 'We are committed to your health and well-being.' }}</p> -->
+    <p>{{ doctorDetails.about || 'We are committed to your health and well-being.' }}</p>
+    <p><strong>Clinical Interest:</strong> {{ doctorDetails.clinicalInterest }}</p>
+    <p><strong>Treats:</strong> {{ doctorDetails.treats }}</p>
+    <p><strong>Consultation Fee:</strong> ${{ doctorDetails.consultationFee }}</p>
+  </div>
+</div>
+
+<br>
+<!-- Show appointment form conditionally based on the showForm boolean -->
+<div *ngIf="showForm" id="appointment-form">
+  <app-appointment-form></app-appointment-form>
+</div>
+<br>
+<div *ngIf="!doctor && !doctorDetails">
+  <p>No doctor details available.</p>
+</div>

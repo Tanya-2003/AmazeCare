@@ -1,0 +1,38 @@
+<div class="dashboard-layout">
+    <!-- Sidebar -->
+     <app-sidebar></app-sidebar> 
+     <!-- <app-sidebar></app-sidebar>  -->
+    <!-- Main Content -->
+    <div class="main-content">
+        
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h1>Welcome, {{ patientName }}</h1>
+            <div class="profile-info">
+                <img [src]="patient.image" alt="{{ patient.name }}" class="profile-img">
+                <div class="profile-details">
+                    <span class="patient-name">{{ patientName }}</span>
+                    <span class="patient-id">No.{{ patient.patientId }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-wrapper">
+            <div class="chart-container">
+                <canvas #appointmentStatusPieChart></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas #appointmentsOverTimeBarChart></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas #medicinesFrequencyBarChart></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas #appointmentsStatusStackedBarChart></canvas>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet> 
+</div> 
+

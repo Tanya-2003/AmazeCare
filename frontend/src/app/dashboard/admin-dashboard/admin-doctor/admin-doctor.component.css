@@ -1,0 +1,230 @@
+.admin-doctor-page {
+  display: flex;
+  height: 100vh;
+}
+
+app-admin-sidebar {
+  flex: 0 0 250px;
+  background-color: #675b9e;
+  color: white;
+  padding: 20px;
+  height: 100%;
+}
+
+.doctor-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-doctor-btn {
+  background-color: #675b9e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.doctor-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f0f0f0;
+}
+
+.search-sort {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"] {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.sort-controls button {
+  margin-left: 10px;
+  padding: 8px;
+  background-color: #675b9e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  background-color: #675b9e;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pagination-controls span {
+  margin: 0 15px;
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #675b9e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.doctor-profile-form {
+  margin-top: 20px;
+}
+
+.doctor-profile-form h3 {
+  color: #675b9e;
+}
+
+/* Updated Form Styles */
+.doctor-profile-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.doctor-profile-form input, .doctor-profile-form select {
+  width: 95%; /* Adjusted to match the second CSS form control width */
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Added border to match form controls */
+  border-radius: 4px;
+}
+
+/* Updated Form Row and Column Layout */
+.doctor-profile-form .form-row {
+  display: flex;
+  gap: 15px; /* Add spacing between elements */
+  justify-content: space-between; /* Add spacing between rows */
+}
+
+.doctor-profile-form .form-row div {
+  flex: 1;
+}
+
+.doctor-profile-form .form-group.col-md-4 .form-control {
+  width: 90%; /* Slightly reduce width for narrower columns */
+}
+
+.success-notification {
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 10px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.doctor-profile-form .form-container {
+  background-color: rgba(255, 255, 255, 0.9); /* White background with opacity */
+  padding: 20px; /* Add padding around the form */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for elevated effect */
+  margin: -16px auto; /* Center the container */
+  max-width: 1200px; /* Optional: Set a max width */
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.notification {
+  position: relative; /* Position relative for absolute positioning if needed */
+  margin-bottom: 20px; /* Space between notifications and other content */
+  padding: 15px; /* Padding inside the notification */
+  border-radius: 4px; /* Rounded corners */
+  transition: opacity 0.5s ease; /* Smooth transition effect */
+}
+
+.notification.alert-success {
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  border: 1px solid #c3e6cb; /* Light green border */
+}
+
+.notification.alert-danger {
+  background-color: #f8d7da; /* Light red background */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb; /* Light red border */
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Fade-in and fade-out transition */
+}
+
+.show {
+  opacity: 1; /* Show notification */
+}

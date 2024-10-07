@@ -1,0 +1,185 @@
+<div class="admin-appointment-page">
+  <!-- Sidebar -->
+  <app-admin-sidebar></app-admin-sidebar>
+
+  <!-- Main Appointment Content -->
+  <div class="appointment-container">
+    <ng-container *ngIf = "!isAddMode && !isEditMode">
+    <h2>Appointments</h2>
+    </ng-container>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="notification alert alert-success fade show">
+      {{ successMessage }}
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="notification alert alert-danger fade show">
+      {{ errorMessage }}
+    </div>
+
+    <!-- <ng-container *ngIf="!isAddMode && !isEditMode">
+    </ng-container> -->
+
+    <!-- Search and Sort Controls and Tables -->
+    <ng-container *ngIf="!isAddMode && !isEditMode">
+      <input type="text" [(ngModel)]="searchQuery" (input)="searchAppointments()" placeholder="Search by patient name" />
+
+      <div class="search-sort">
+        <div class="date-filter">
+          <label for="filterDate">Filter by Date:</label>
+          <input type="date" id="filterDate" [(ngModel)]="selectedDate" (change)="filterAppointments()" />
+          <button (click)="selectedDate = null; filterAppointments()">Clear Date</button>
+        </div>
+
+        <div class="sort-controls">
+          <label>Sort by:</label>
+          <button (click)="sortAppointments('patientName')">Patient Name</button>
+          <button (click)="sortAppointments('doctorName')">Doctor Name</button>
+        </div>
+
+        <div class="status-filter">
+          <label for="statusFilter">Filter by Status:</label>
+          <select id="statusFilter" [(ngModel)]="selectedStatus" (change)="filterAppointments()">
+            <option value="">All</option>
+            <option value="pending">Cancelled</option>
+            <option value="completed">Completed</option>
+            <option value="rejected">Rejected</option>
+            <option value="pending">Pending</option>
+
+          </select>
+        </div>
+      </div>
+
+      <!-- Button to add a new appointment -->
+      <div class="add-appointment-row">
+        <button class="add-appointment-btn" (click)="openAddAppointmentModal()">+ Add Appointment</button>
+      </div>
+
+      <!-- Appointment Table -->
+    <div  class="appointment-table">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Patient Name</th>
+            <th>Doctor Name</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of getPaginatedAppointments(); let i = index">
+            <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+            <td>{{ appointment.patientName }}</td>
+            <td>{{ appointment.doctorName }}</td>
+            <td>{{ appointment.appointmentDate }}</td>
+            <td>{{ appointment.appointmentTime }}</td>
+            <td>{{ appointment.status }}</td>
+            <td>{{ appointment.remarks }}</td>
+            <td>
+              <div class="action-buttons">
+              <!-- <button (click)="editAppointmentStatus((currentPage - 1) * itemsPerPage + i)"> -->
+                <button (click)="editAppointmentStatus(appointment.appointmentId)">
+                  <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <!-- <button (click)="confirmDeleteAppointment(currentAppointmentId!)"> -->
+                <button (click)="openDeleteModal(appointment.appointmentId)">
+                  <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </ng-container>    
+
+    <!-- Appointment Form (Add/Edit Mode) -->
+    <div *ngIf="isAddMode || isEditMode" class="appointment-form">
+      <div class="form-container"> <!-- Added opaque container div -->
+      <h3 *ngIf="isAddMode">Add Appointment</h3>
+      <h3 *ngIf="isEditMode">Edit Appointment Status</h3>
+      
+      <form #appointmentForm="ngForm" (ngSubmit)="saveAppointment(appointmentForm)">
+        <!-- patientid and doctorid (Same Line) -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="patientId">Patient ID:</label>
+            <input type="number" id="patientId" [(ngModel)]="newAppointment.patientId" name="patientId" class="form-control" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="doctorId">Doctor ID:</label>
+            <input type="number" class="doctorId form-control" id="doctorId" [(ngModel)]="newAppointment.doctorId" name="doctorId" required />
+          </div>
+        </div>
+    
+        <!-- Date of appointment and status (Same Line) -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="text" id="appointmentDate" [(ngModel)]="newAppointment.appointmentDate" name="appointmentDate" #appointmentDate="ngModel" class="form-control" required pattern="\d{4}-\d{2}-\d{2}" placeholder="yyyy-mm-dd" />
+            <div *ngIf="appointmentDate.invalid && (appointmentDate.dirty || appointmentDate.touched)" class="text-danger">
+              <div *ngIf="appointmentDate.errors?.['required']">Appointment Date is required.</div>
+              <div *ngIf="appointmentDate.errors?.['pattern']">Date must be in the format yyyy-mm-dd.</div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="status">Status:</label>
+            <select id="status" [(ngModel)]="newAppointment.status" name="status" class="form-control" required>
+              <option value="Cancelled">Cancelled</option>
+              <option value="Completed">Completed</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Remarks Field -->
+        <div class="form-group">
+          <label for="remarks">Remarks:</label>
+          <input type="text" id="remarks" [(ngModel)]="newAppointment.remarks" name="remarks" class="form-control" required />
+          <div *ngIf="remarks?.invalid && (remarks?.dirty || remarks?.touched)" class="text-danger">
+            <div *ngIf="remarks?.errors?.['required']">Remarks are required.</div>
+          </div>
+        </div>
+    
+        <!-- Save and Cancel Buttons -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-success">
+            <i class="fa-solid fa-check"></i> Save
+          </button>
+          <button type="button" class="btn btn-danger" (click)="cancelEdit()">
+            <i class="fa-solid fa-xmark"></i> Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls" *ngIf="!isAddMode && !isEditMode">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages()">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="delete-modal" *ngIf="showDeleteConfirm">
+      <div class="modal-content">
+        <p>Are you sure you want to delete this appointment?</p>
+        <div class="modal-buttons">
+          <button class="btn btn-danger" (click)="deleteAppointment(currentAppointmentId!)">Yes</button>
+          <button class="btn btn-secondary" (click)="cancelDelete()">No</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

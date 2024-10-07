@@ -1,0 +1,91 @@
+<main class="signup-page">
+  <div class="full">
+    <div class="signup-container">
+      <section class="signup-form-section">
+        <header class="brand-header">
+          <img src="assets/icon/logo.svg" alt="Amaze Care Logo" class="brand-logo" />
+          <h1 class="brand-name">Amaze Care</h1>
+        </header>
+        <h2 class="system-title">Health Management System</h2>
+        <p class="signup-instruction">Create an account by entering the information below</p>
+        <form class="signup-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="input-row">
+            
+            <div>
+              <input type="text" class="first" id="firstName" name="firstName" ngModel class="form-input first" placeholder="First Name" aria-label="First Name" required />
+            </div>
+
+            <div>
+              <input type="text" class="last" id="lastName" name="lastName" ngModel class="form-input last" placeholder="Last Name" aria-label="Last Name" required />
+            </div>
+          </div>
+
+          <!-- Date of Birth Field -->
+          <div class="input-group">
+            <input type="text" id="dateOfBirth" name="dateOfBirth" ngModel class="form-input" placeholder="yyyy-mm-dd" aria-label="Date of Birth" required />
+          </div>
+          
+          <div class="input-group">
+            <select id="gender" name="gender" ngModel class="form-input" aria-label="Gender" required>
+              <option value="" disabled selected>Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <input type="email" id="email" name="email" ngModel class="form-input" placeholder="email@example.com" aria-label="Email Address" required />
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="address" name="address" ngModel class="form-input" placeholder="Address" aria-label="Address" />
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="bloodGroup" name="bloodGroup" ngModel class="form-input" placeholder="Blood Group" aria-label="Blood Group" />
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="knownAllergies" name="knownAllergies" ngModel class="form-input" placeholder="Known Allergies" aria-label="Known Allergies" />
+          </div>
+          
+          <div class="input-group">
+            <input type="text" id="currentMedication" name="currentMedication" ngModel class="form-input" placeholder="Current Medication" aria-label="Current Medication" />
+          </div>
+          
+          <div class="input-group">
+            <input type="text" id="username" name="username" ngModel class="form-input" placeholder="Username" aria-label="Username" required />
+          </div>
+
+          <!-- Password -->
+          <div class="input-group password-group">
+            <input [type]="passwordFieldType" id="password" name="password" ngModel class="form-input" placeholder="Password" aria-label="Password" required />
+            <mat-icon class="input-icon" (click)="togglePasswordVisibility()" aria-hidden="true">
+              {{ passwordFieldType === 'password' ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="input-group password-group">
+            <input [type]="confirmPasswordFieldType" id="confirmPassword" name="confirmPassword" ngModel class="form-input" placeholder="Confirm Password" aria-label="Confirm Password" required />
+            <mat-icon class="input-icon" (click)="toggleConfirmPasswordVisibility()" aria-hidden="true">
+              {{ confirmPasswordFieldType === 'password' ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </div>
+
+          <!-- Register Button -->
+          <button type="submit" class="register-button">
+            Register
+            <img src="assets/icon/arrow-icon.png" alt="" class="button-icon" />
+          </button>
+        </form>
+        <p class="login-prompt">
+          Already have an account? <a routerLink="/auth/login" class="login-link">Login here.</a>
+        </p>
+      </section>
+      <section class="signup-image-section">
+        <img src="assets/images/registerimg.png" alt="Healthcare illustration" class="signup-image" />
+      </section>
+    </div>
+  </div>
+</main>

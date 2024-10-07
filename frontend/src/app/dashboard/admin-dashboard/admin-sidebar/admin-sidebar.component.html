@@ -1,0 +1,74 @@
+<div class="sidebar">
+    <div class="logo">
+      <i class="fa-solid fa-heart-pulse"></i>
+      <span>Amaze Care</span>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li>
+          <a href="/dashboard/admin-dashboard" class="sidebar-link">
+            <!-- <a routerLink="/dashboard/patient-dashboard" class="sidebar-link"> -->
+            <i class="fa-regular fa-chart-bar"></i>
+            dashboard
+          </a>
+        </li>
+        <li>
+            <!-- <a href="/dashboard/patientmedication" class="sidebar-link"> -->
+              <a routerLink="/dashboard/adminpatient" class="sidebar-link">
+                <i class="fa-solid fa-user"></i>
+              Patient
+            </a>
+          </li>
+          <li>
+            <!-- <a href="/dashboard/patientschedule" class="sidebar-link"> -->
+              <a routerLink="/dashboard/admindoctor" class="sidebar-link">
+                <i class="fa-solid fa-user-doctor"></i>
+              Doctor
+            </a>
+          </li>
+          <li>
+            <!-- <a href="/dashboard/patienthealth-record" class="sidebar-link"> -->
+              <a routerLink="/dashboard/adminrecord" class="sidebar-link">
+                <i class="fa-solid fa-chart-line"></i>
+              Record
+            </a>
+          </li>
+        <li>
+          <!-- <a href="/dashboard/patientprofile" class="sidebar-link"> -->
+            <a routerLink="/dashboard/adminappointment" class="sidebar-link">
+            <i class="fa-regular fa-clipboard"></i>
+            Appointment
+          </a>
+        </li>
+    
+        <li>
+            <!-- <a href="/dashboard/patienthealth-record" class="sidebar-link">-->
+              <a routerLink="/dashboard/adminbilling" class="sidebar-link">
+                <i class="fa-regular fa-money-bill-1"></i>
+             Billing
+            </a>
+        </li> 
+      </ul>
+    </nav>
+    <div class="logout">
+      <!-- <a href="/home" class="sidebar-link"> -->
+        <a (click)="onLogout()" routerLink="/auth/login" class="sidebar-link">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        Log Out 
+      </a>
+    </div>
+  </div>
+  
+  <script>
+    window.onload = function() {
+      var currentPath = window.location.pathname;
+      var links = document.querySelectorAll('.sidebar-link');
+      
+      links.forEach(function(link) {
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    };
+  </script>
+  

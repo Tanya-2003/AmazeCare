@@ -1,0 +1,266 @@
+<div class="admin-records-page">
+    <!-- Sidebar -->
+    <app-admin-sidebar></app-admin-sidebar>
+  
+    <!-- Main Content -->
+    <div class="records-container">
+      <ng-container *ngIf = "!isAddMode && !isEditMode">
+      <h2>Health Records</h2>
+      </ng-container>
+
+      <!-- Success Message -->
+      <div *ngIf="successMessage" class="notification alert alert-success fade show">
+        {{ successMessage }}
+      </div>
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="notification alert alert-danger fade show">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Search and Sort Controls -->
+      <ng-container *ngIf="!isAddMode && !isEditMode">
+      <div class="search-sort">
+        <input type="text" placeholder="Search by patient name / doctor name" (input)="searchRecords()" [(ngModel)]="searchQuery" />
+  
+        <div class="sort-controls">
+          <label>Sort by:</label>
+          <button (click)="sortRecords('patientName')">Patient Name</button>
+          <button (click)="sortRecords('doctorName')">Doctor Name</button>
+        </div>
+      </div>
+  
+        <!-- Button to add a new record -->
+        <button class="add-record-btn" (click)="openAddRecordModal()">+ Add Record</button>
+      </ng-container>
+
+      <!-- Records Table -->
+      <div *ngIf="!isAddMode && !isEditMode" class="records-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Patient Name</th>
+              <th>Doctor Name</th>
+              <th>Appointment ID</th>
+              <th>Next Appointment Date</th>
+              <th>Insurance Coverage</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of getPaginatedRecords(); let i = index">
+              <!-- <tr *ngFor="let record of getPaginatedRecords()"> -->
+              <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+              <td>{{ record.patientName || 'N/A' }}</td>  <!-- Use fallback value if undefined -->
+              <td>{{ record.doctorName || 'N/A' }}</td> 
+              <td>{{ record.appointmentId }}</td>
+              <!-- <td>{{ record.nextAppointmentDate }}</td> -->
+              <td>{{ record.nextAppointmentDate | date: 'yyyy-MM-dd' }}</td>
+              <td>{{ record.insuranceCoverage }}</td>
+              <td>
+                <!-- <button (click)="editRecord((currentPage - 1) * itemsPerPage + i)"> -->
+                  <button (click)="editRecord(record)">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <!-- <button (click)="confirmDeleteRecord((currentPage - 1) * itemsPerPage + i)"> -->
+                  <button (click)="confirmDeleteRecord(record.recordId!)">
+                <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Pagination Controls -->
+      <div class="pagination-controls" *ngIf="!isAddMode && !isEditMode">
+        <button (click)="previousPage()" [disabled]="currentPage === 1">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages()">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Appointment Form (Add/Edit Mode) -->
+      <div *ngIf="isAddMode || isEditMode" class="record-form">
+        <div class="form-container"> <!-- Added opaque container div -->
+        <h3 *ngIf="isAddMode">Add Medical Record</h3>
+        <h3 *ngIf="isEditMode">Edit Medical Record</h3>
+        
+        <form #recordForm="ngForm" (ngSubmit)="saveRecord(recordForm)">
+          <!-- IDs (Same Line) -->
+          <div class="form-row">
+            <!-- <div class="form-group col-md-6">
+              <label for="recordId">Record ID</label>
+              <input 
+                type="text" 
+                id="recordId" 
+                [(ngModel)]="newRecord.recordId" 
+                name="recordId" 
+                [readonly]="isEditing" 
+                required 
+                #recordIdInput="ngModel" />
+              <div *ngIf="recordIdInput.errors?.['required'] && (recordIdInput.dirty || recordIdInput.touched)">
+                <small>Record ID is required.</small>
+              </div>
+            </div> -->
+
+            <div class="form-group col-md-6">
+              <label for="patientId">Patient ID</label>
+              <input 
+                type="number" 
+                id="patientId" 
+                [(ngModel)]="newRecord.patientId" 
+                name="patientId" 
+                [disabled]="isEditing" 
+                required 
+                #patientIdInput="ngModel" />
+              <div *ngIf="patientIdInput.errors?.['required'] && (patientIdInput.dirty || patientIdInput.touched)">
+                <small>Patient ID is required.</small>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="doctorId">Doctor ID</label>
+              <input 
+                type="number" 
+                id="doctorId" 
+                [(ngModel)]="newRecord.doctorId" 
+                name="doctorId" 
+                [disabled]="isEditing" 
+                required 
+                #doctorIdInput="ngModel" />
+              <div *ngIf="doctorIdInput.errors?.['required'] && (doctorIdInput.dirty || doctorIdInput.touched)">
+                <small>Doctor ID is required.</small>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="appointmentId">Appointment ID</label>
+              <input type="text" id="appointmentId" [(ngModel)]="newRecord.appointmentId" name="appointmentId" [readonly]="isEditing" required #appointmentIdInput="ngModel" />
+              <div *ngIf="appointmentIdInput.errors?.['required'] && (appointmentIdInput.dirty || appointmentIdInput.touched)">
+                <small>Appointment ID is required.</small>
+              </div>
+            </div>
+
+          </div>
+      
+          <!-- Diagnosis and Treatment Plan (Same Line) -->
+          <div class="form-row">
+
+            <div class="form-group col-md-6">
+              <label for="diagnosis">Diagnosis</label>
+              <textarea 
+                id="diagnosis" 
+                [(ngModel)]="newRecord.diagnosis" 
+                name="diagnosis" 
+                rows="3" 
+                required 
+                #diagnosisInput="ngModel">
+              </textarea>
+              <div *ngIf="diagnosisInput.errors?.['required'] && (diagnosisInput.dirty || diagnosisInput.touched)">
+                <small>Diagnosis is required.</small>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="treatmentPlan">Treatment Plan</label>
+              <textarea 
+                id="treatmentPlan" 
+                [(ngModel)]="newRecord.treatmentPlan" 
+                name="treatmentPlan" 
+                rows="3" 
+                required 
+                #treatmentPlanInput="ngModel">
+              </textarea>
+              <div *ngIf="treatmentPlanInput.errors?.['required'] && (treatmentPlanInput.dirty || treatmentPlanInput.touched)">
+                <small>Treatment Plan is required.</small>
+              </div>
+            </div>
+
+          </div>
+      
+          <!-- Medicine Time,Frequency,Name -->
+          <div class="form-row">
+
+            <div class="form-group col-md-6">
+              <label for="medicineName">Medicine Name</label>
+              <input type="text" id="medicineName" [(ngModel)]="newRecord.medicineName" name="medicineName" required #medicineNameInput="ngModel" />
+              <div *ngIf="medicineNameInput.errors?.['required'] && (medicineNameInput.dirty || medicineNameInput.touched)">
+                <small>Medicine Name is required.</small>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="medicineFrequency">Medicine Frequency</label>
+              <input type="text" id="medicineFrequency" [(ngModel)]="newRecord.medicineFrequency" name="medicineFrequency" required #medicineFrequencyInput="ngModel" />
+              <div *ngIf="medicineFrequencyInput.errors?.['required'] && (medicineFrequencyInput.dirty || medicineFrequencyInput.touched)">
+                <small>Medicine Frequency is required.</small>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="medicineTime">Medicine Time</label>
+              <input type="text" id="medicineTime" [(ngModel)]="newRecord.medicineTime" name="medicineTime" required #medicineTimeInput="ngModel" />
+              <div *ngIf="medicineTimeInput.errors?.['required'] && (medicineTimeInput.dirty || medicineTimeInput.touched)">
+                <small>Medicine Time is required.</small>
+              </div>
+            </div>
+
+          </div>
+      
+          <!-- Appointment Date and insurance coverage (Same Line) -->
+          <div class="form-row">
+
+            <div class="form-group col-md-4">
+              <label for="nextAppointmentDate">Next Appointment Date</label>
+              <input type="date" id="nextAppointmentDate" [(ngModel)]="newRecord.nextAppointmentDate" name="nextAppointmentDate" required #nextAppointmentDateInput="ngModel" />
+              <div *ngIf="nextAppointmentDateInput.errors?.['required'] && (nextAppointmentDateInput.dirty || nextAppointmentDateInput.touched)">
+                <small>Next Appointment Date is required.</small>
+              </div>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="insuranceCoverage">Insurance Coverage</label>
+              <select id="insuranceCoverage" [(ngModel)]="newRecord.insuranceCoverage" name="insuranceCoverage" required #insuranceCoverageInput="ngModel">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <div *ngIf="insuranceCoverageInput.errors?.['required'] && (insuranceCoverageInput.dirty || insuranceCoverageInput.touched)">
+                <small>Insurance Coverage is required.</small>
+              </div>
+            </div>
+
+          </div>
+      
+          <!-- Save and Cancel Buttons -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-check"></i> Save
+            </button>
+            <button type="button" class="btn btn-danger" (click)="cancelEdit()">
+              <i class="fa-solid fa-xmark"></i> Cancel
+            </button>
+          </div>
+
+        </form>
+
+        </div>  
+      </div>  
+  
+      <!-- Delete Confirmation Modal -->
+      <div class="delete-modal" *ngIf="showDeleteConfirm">
+        <div class="modal-content">
+          <p>Are you sure you want to delete this record?</p>
+          <div class="modal-buttons">
+            <button (click)="deleteConfirmedRecord()">Yes</button>
+            <button (click)="cancelDelete()">No</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>

@@ -1,0 +1,56 @@
+/* Hero section container */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #424088;
+  padding: 0px 0; /* Further reduce space above and below */
+  height: 100vh;
+  position: relative;
+}
+
+.hero .text-content {
+  max-width: 50%; /* Adjust this to control text width */
+  text-align: center; /* Center text within its container */
+  color: #424088;
+}
+
+.hero .super-simple {
+  color: #424088; 
+  padding: 15px 30px; /* Padding for spacing */
+  font-size: 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin: 1;
+  font-weight: bold;
+  
+}
+
+.hero .image {
+  max-width: 50%;
+  display: flex; /* Use flexbox to center the image */
+  justify-content: center; /* Center the image horizontally */
+}
+
+.hero .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image2 {
+  display: flex; /* Center the image horizontally */
+  justify-content: center; /* Center the image */
+  padding: 0; /* Remove padding to utilize full width */
+  width: 100%; /* Make sure it takes the full width of the screen */
+}
+
+.image2 img {
+  width: 100%; /* Set the image width to 100% of its container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 0; /* Optional: remove border radius for full-width effect */
+}

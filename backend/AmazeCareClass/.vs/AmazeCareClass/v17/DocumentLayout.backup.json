@@ -1,0 +1,346 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2A5215D8-E1A9-4501-9326-B71483A8D6C1}|..\\AmazeCareApi.Tests\\AmazeCareApi.Tests.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi.tests\\patientscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E207DD87-91A2-4908-8975-5133EC708643}|..\\AmazeCareApi\\AmazeCareApi.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E207DD87-91A2-4908-8975-5133EC708643}|..\\AmazeCareApi\\AmazeCareApi.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E207DD87-91A2-4908-8975-5133EC708643}|..\\AmazeCareApi\\AmazeCareApi.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\bookingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\bookingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\adminlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\adminlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\patientregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\patientregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\patientlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\patientlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\doctorregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\doctorregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\doctorcarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\doctorcarddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\dto\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:dto\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E207DD87-91A2-4908-8975-5133EC708643}|..\\AmazeCareApi\\AmazeCareApi.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi\\controllers\\patientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E207DD87-91A2-4908-8975-5133EC708643}|..\\AmazeCareApi\\AmazeCareApi.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareclass\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDE90789-3BC8-4CAE-86F0-430952764553}|AmazeCareClass.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E207DD87-91A2-4908-8975-5133EC708643}|..\\AmazeCareApi\\AmazeCareApi.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E207DD87-91A2-4908-8975-5133EC708643}|..\\AmazeCareApi\\AmazeCareApi.csproj|c:\\users\\admin\\desktop\\hexaware\\project\\amazecareapi\\repository\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PatientsControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi.Tests\\PatientsControllerTests.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi.Tests\\PatientsControllerTests.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi.Tests\\PatientsControllerTests.cs",
+              "RelativeToolTip": "..\\AmazeCareApi.Tests\\PatientsControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:37:00.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppointmentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\AppointmentDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\AppointmentDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\AppointmentDTO.cs",
+              "RelativeToolTip": "DTO\\AppointmentDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:36:16.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PatientLoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\PatientLoginDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\PatientLoginDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\PatientLoginDTO.cs",
+              "RelativeToolTip": "DTO\\PatientLoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:36:07.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DoctorRegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\DoctorRegisterDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\DoctorRegisterDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\DoctorRegisterDTO.cs",
+              "RelativeToolTip": "DTO\\DoctorRegisterDTO.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:35:54.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookingDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\BookingDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\BookingDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\BookingDTO.cs",
+              "RelativeToolTip": "DTO\\BookingDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:38:51.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "..\\AmazeCareApi\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAhwHMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:42:57.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Program.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi\\Program.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Program.cs",
+              "RelativeToolTip": "..\\AmazeCareApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:50:03.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminLoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\AdminLoginDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\AdminLoginDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\AdminLoginDTO.cs",
+              "RelativeToolTip": "DTO\\AdminLoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:36:19.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DoctorsController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\DoctorsController.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi\\Controllers\\DoctorsController.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\DoctorsController.cs",
+              "RelativeToolTip": "..\\AmazeCareApi\\Controllers\\DoctorsController.cs",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAhwNAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:35:29.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DoctorCardDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\DoctorCardDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\DoctorCardDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\DoctorCardDTO.cs",
+              "RelativeToolTip": "DTO\\DoctorCardDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:36:04.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DoctorDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\DoctorDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\DoctorDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\DoctorDTO.cs",
+              "RelativeToolTip": "DTO\\DoctorDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:36:02.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Doctor.cs",
+              "RelativeDocumentMoniker": "Models\\Doctor.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Doctor.cs",
+              "RelativeToolTip": "Models\\Doctor.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:32:34.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PatientRegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\PatientRegisterDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\PatientRegisterDTO.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\DTO\\PatientRegisterDTO.cs",
+              "RelativeToolTip": "DTO\\PatientRegisterDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:13:14.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "Models\\Patient.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Patient.cs",
+              "RelativeToolTip": "Models\\Patient.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:32:44.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PatientsController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\PatientsController.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi\\Controllers\\PatientsController.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\PatientsController.cs",
+              "RelativeToolTip": "..\\AmazeCareApi\\Controllers\\PatientsController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA1wO8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T04:13:50.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BookingsController.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\BookingsController.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi\\Controllers\\BookingsController.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "..\\AmazeCareApi\\Controllers\\BookingsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:44:00.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "Models\\Appointment.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Appointment.cs",
+              "RelativeToolTip": "Models\\Appointment.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:35:57.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareClass\\Models\\Booking.cs",
+              "RelativeToolTip": "Models\\Booking.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvxQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T08:35:35.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Repository\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi\\Repository\\IAdminRepository.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Repository\\IAdminRepository.cs",
+              "RelativeToolTip": "..\\AmazeCareApi\\Repository\\IAdminRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA1wCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:42:53.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Repository\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "..\\AmazeCareApi\\Repository\\AdminRepository.cs",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Hexaware\\Project\\AmazeCareApi\\Repository\\AdminRepository.cs",
+              "RelativeToolTip": "..\\AmazeCareApi\\Repository\\AdminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:42:52.129Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

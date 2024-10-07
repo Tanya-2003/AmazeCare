@@ -1,0 +1,79 @@
+<div class="schedule-page">
+  <app-doctor-sidebar></app-doctor-sidebar>
+
+  <div class="appointments-section">
+    <h2>Appointments</h2>
+
+    <!-- Notification Messages -->
+    <div *ngIf="successMessage" class="success-notification">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="error-notification">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Toggle Buttons for Upcoming and Past Appointments -->
+    <div class="appointment-toggle">
+      <button 
+        class="toggle-button" 
+        [ngClass]="{ 'active': showUpcoming }" 
+        (click)="toggleAppointments(true)">
+        Upcoming Appointments
+      </button>
+      <button 
+        class="toggle-button" 
+        [ngClass]="{ 'active': !showUpcoming }" 
+        (click)="toggleAppointments(false)">
+        Past Appointments
+      </button>
+    </div>
+
+    <!-- Upcoming Appointments -->
+    <div *ngIf="showUpcoming">
+      <h3>Upcoming Appointments</h3>
+      <div class="appointment-row" *ngFor="let appointment of appointments.upcoming; let i = index">
+        <span class="appointment-date">{{ appointment.appointmentDate | date:'MMMM d, h:mm a' }}</span>
+        <span class="appointment-details">
+          {{ appointment.remarks }} with {{ appointment.patientName || 'Patient ID ' + appointment.patientId }}
+        </span>
+        
+        <!-- Dropdown for status selection -->
+        <select class="appointment-status" 
+                [(ngModel)]="appointments.upcoming[i].status"
+                [ngClass]="{
+                  'confirmed': appointments.upcoming[i].status === 'Confirmed',
+                  'waiting': appointments.upcoming[i].status === 'Waiting',
+                  'rejected': appointments.upcoming[i].status === 'Rejected'
+                }">
+          <option value="Confirmed">Confirmed</option>
+          <option value="Waiting">Waiting</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+        
+        <!-- Button to update the status -->
+        <button (click)="updateAppointmentStatus(appointment.appointmentId, appointments.upcoming[i].status)">Update Status</button>
+      </div>
+    </div>
+
+    <!-- Past Appointments -->
+    <div *ngIf="!showUpcoming">
+      <h3>Past Appointments</h3>
+      <div class="appointment-row" *ngFor="let appointment of appointments.past">
+        <span class="appointment-date">{{ appointment.appointmentDate | date:'MMMM d, h:mm a' }}</span>
+        <span class="appointment-details">
+          {{ appointment.remarks }} with {{ appointment.patientName || 'Patient ID ' + appointment.patientId }}
+        </span>
+        
+        <!-- Status displayed as a colored box -->
+        <span class="appointment-status-box" 
+              [ngClass]="{
+                'confirmed': appointment.status === 'Confirmed',
+                'waiting': appointment.status === 'Waiting',
+                'rejected': appointment.status === 'Rejected'
+              }">
+          {{ appointment.status }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

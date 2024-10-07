@@ -1,0 +1,123 @@
+/* Sidebar styles */
+.sidebar {
+ /* Sidebar background color */
+  padding: 20px;
+  color: white;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 100px;
+}
+
+.logo i {
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+/* Navigation styles */
+.navigation ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navigation ul li {
+  margin: 20px 0;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.navigation ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.navigation ul li a i {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Logout button styles */
+.logout {
+  margin-top: auto;
+}
+
+.logout a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.logout a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout a i {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Active link styling */
+.active {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighten the background */
+  color: white;
+  position: relative;
+  font-weight: bold;
+  padding-left: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3); /* Glowing effect for active */
+  transform: translateX(10px); /* Slight right slide to indicate active */
+}
+
+/* Left-border effect for the active link */
+.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #fff; /* White left border */
+  border-radius: 0 4px 4px 0; /* Smooth rounded corner */
+}
+
+/* Active link hover effect */
+.active:hover {
+  transform: scale(1.1) translateX(15px); /* Slightly enlarge the active item on hover */
+  background-color: rgba(255, 255, 255, 0.3); /* Brighten background on hover */
+  box-shadow: 0 5px 25px rgba(255, 255, 255, 0.4); /* Increased glowing effect */
+}
+
+/* Smooth transition for all hover and active states */
+.navigation ul li a, .logout a {
+  transition: all 0.3s ease;
+}
