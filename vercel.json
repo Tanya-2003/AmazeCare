@@ -4,14 +4,14 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "frontend/dist/amaze-care"
+        "distDir": "frontend/dist/amaze-care/browser"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "frontend/dist/amaze-care/$1"
+      "dest": "frontend/dist/amaze-care/browser/$1"
     }
   ]
 }
