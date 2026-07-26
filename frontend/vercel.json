@@ -1,0 +1,8 @@
+{
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/amaze-care",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
